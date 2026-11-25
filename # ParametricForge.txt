@@ -1,0 +1,15 @@
+# ParametricForge
+
+**ParametricForge** is an open-source Python toolkit bridging programmatic CAD and functional FDM 3D printing. It generates nozzle-calibrated OpenSCAD assemblies with automatic wall-thickness and friction-fit tolerance compensation.
+
+## Key Features
+- **Nozzle-Aware Wall Sizing:** Automatically computes optimal wall thickness based on nozzle diameter (e.g., 0.4 mm, 0.6 mm, 0.8 mm) and target perimeter count.
+- **Dynamic Clearance Compensation:** Adjusts mechanical fit tolerances between mating parts (lids, joints, snap-fits) without manual CAD editing.
+- **Zero-Dependency Core:** Uses only the Python standard library to output clean, human-readable `.scad` files ready for STL/STEP export.
+
+## Quick Start
+
+Generate a custom 140×90×50 mm enclosure calibrated for a **0.8 mm nozzle** with 3 wall perimeters:
+
+```bash
+python3 tolerance_box.py --width 140 --depth 90 --height 50 --nozzle 0.8 --perimeters 3 --out custom_box.scad
